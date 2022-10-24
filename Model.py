@@ -1,7 +1,7 @@
 import pandas as pd
 import pickle
 
-data= pd.read_csv('C:/Users/Stevelal/anaconda3/Lib/site-packages/Data Analysis Final Project/TestAPP1/Final_data.csv')
+data= pd.read_csv('https://github.com/Stevelal96/Project_Coupon_Recommendation/blob/main/Final_data.csv')
      
 from sklearn.model_selection import train_test_split
 
@@ -22,7 +22,7 @@ order = [['Home','No Urgent Place', 'Work'],['Kid(s)','Alone','Partner','Friend(
         [0,1],['Below 21','21-30','31-40','41-50','50 & Above'],['within 15min','Between 15-25 min','morethan25min']]
 Ordinal_enc = OrdinalEncoder(categories=order)
 Encoder = Ordinal_enc.fit(x_train)
-pickle.dump(Encoder, open("C:/Users/Stevelal/anaconda3/Lib/site-packages/Data Analysis Final Project/TestAPP1/Encoder.pkl", "wb"))
+pickle.dump(Encoder, open("https://github.com/Stevelal96/Project_Coupon_Recommendation/blob/main/Encoder.pkl", "wb"))
 Data_Ord_enc = Encoder.transform(x_train)
 Data_Ord_enc = pd.DataFrame(Data_Ord_enc,columns=(x_train.columns.values))
 Test_Data_Ord_enc = Encoder.transform(x_test)
@@ -38,4 +38,4 @@ print('Accuracy Score is:', accuracy_score(y_test, y_pred7))
 print('Recall Score is:', recall_score(y_test, y_pred7))
 print('Precision Score:', precision_score(y_test, y_pred7))
 print('F1 score is:', f1_score(y_test, y_pred7))
-pickle.dump(Cb_model, open("C:/Users/Stevelal/anaconda3/Lib/site-packages/Data Analysis Final Project/TestAPP1/model.pkl", "wb"))
+pickle.dump(Cb_model, open("https://github.com/Stevelal96/Project_Coupon_Recommendation/blob/main/model.pkl", "wb"))
